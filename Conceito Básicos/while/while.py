@@ -1,4 +1,4 @@
-## Leia um número N e escreva esse número ao contrário usando while.
+## Leia um número N e escreva esse número ao contrário.
 # num = int(input("Digite um número: "))
 # while num > 0:
 #     res = num % 10
