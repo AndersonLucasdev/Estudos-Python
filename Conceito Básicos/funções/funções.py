@@ -14,6 +14,7 @@
 # print(comb(N, P))
 
 
+
 ## retorna digitos
 # num = 12345
 # def retorna_digitos(num: int) -> int:
@@ -24,6 +25,7 @@
 #         aux //= 10
 #     return digitos
 # print(retorna_digitos(num))
+
 
 
 ## fibonnaci - até numero
