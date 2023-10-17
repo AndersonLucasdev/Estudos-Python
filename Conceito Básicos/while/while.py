@@ -118,3 +118,14 @@
 #         print(contador)
 #     contador += 1
 
+lista = [2, 1, 3]
+def lista_ordenada(lista):
+    flag = False
+    for x in range(len(lista) - 1):
+        if lista[x] > lista[x + 1]:
+            pass
+        else:
+            return True
+    return flag
+flag = lista_ordenada(lista)
+print("n ordenada") if flag == True else print("ordenada")
