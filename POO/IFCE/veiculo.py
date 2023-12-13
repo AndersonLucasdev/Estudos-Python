@@ -20,4 +20,34 @@ class Onibus(Veiculo):
   def tarifa(self):
       return 5.00
 
+class MicroOnibus(Onibus):
 
+  def __init__(self, velocidade_maxima: float, km_rodados: float, marcha_automatica: bool, num_assentos: int) -> None:
+    super().__init__(velocidade_maxima, km_rodados, marcha_automatica, num_assentos)
+  
+  def tarifa(self):
+    return 4.50
+
+class EmpresaOnibus():
+
+  @staticmethod
+  def faturamento(veiculo: str):
+    if isinstance(veiculo, Onibus):
+      return veiculo.num_assentos * veiculo.tarifa()
+    elif isinstance(veiculo, MicroOnibus):
+      return veiculo.num_assentos * veiculo.tarifa()
+    else:
+      return 0
+
+
+onibus_teste = Onibus(155.00, 3200.00, True, 55)
+print(f" O valor do faturamento foi R${EmpresaOnibus.faturamento(onibus_teste)}")
+
+microonibus_teste = MicroOnibus(155.00, 3200.00, True, 55)
+print(f" O valor do faturamento foi R${EmpresaOnibus.faturamento(microonibus_teste)}")
+
+onibus_teste = Onibus(155.00, 3200.00, True, 55)
+print(f" R${onibus_teste.tarifa()} de tarifa")
+
+microonibus_teste = MicroOnibus(155.00, 3200.00, True, 35)
+print(f" R${microonibus_teste.tarifa()} de tarifa")
