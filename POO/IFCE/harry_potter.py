@@ -27,6 +27,8 @@ class Aluno(Bruxo):
     def __init__(self, nome: str) -> None:
         pass
 
+class Aluno(Bruxo):
+    pass
 
 class Professor(Bruxo):
 
