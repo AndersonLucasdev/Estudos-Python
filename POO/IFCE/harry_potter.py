@@ -1,7 +1,18 @@
 import random
 
 class Hogwarts:
-    pass
+
+    def __init__(self) -> None:
+        self.alunos = []
+        self.professores = []
+    
+    def matricular_aluno(self, aluno) -> None:
+        self.alunos.append(aluno)
+        print(f"{aluno.nome} matriculado em Hogwarts!")
+
+    def contratar_professor(self, professor) -> None:
+        self.professores.append(professor)
+        print(f"{professor.nome} contratado para lecionar em Hogwarts!")
 
 class Bruxo:
 
@@ -12,6 +23,7 @@ class Bruxo:
         self.casa = Chapeu.escolha_casa()
         self.patrono = Bruxo.escolha_patronos()
     
+    @staticmethod
     def escolha_patronos():
         return random.choice(Bruxo.PATRONOS)
 
@@ -19,6 +31,7 @@ class Chapeu:
 
     CASAS = ["Grifinória", "Sonserina", "Lufa-Lufa", "Corvinal"]
 
+    @staticmethod
     def escolha_casa():
         return random.choice(Chapeu.CASAS)
 
@@ -28,7 +41,16 @@ class Aluno(Bruxo):
         pass
 
 class Aluno(Bruxo):
-    pass
+    def __init__(self, nome: str) -> None:
+        super().__init__(nome)
+        self.disciplinas = []
+
+    def adicionar_disciplina(self, disciplina) -> None:
+        self.disciplinas.append(disciplina)
+        print(f"{self.nome} adicionou a disciplina: {disciplina}")
+
+    def listar_disciplinas(self) -> None:
+        print(f"Disciplinas de {self.nome}: {', '.join(self.disciplinas)}")
 
 class Professor(Bruxo):
 
