@@ -13,6 +13,11 @@ class Hogwarts:
     def contratar_professor(self, professor) -> None:
         self.professores.append(professor)
         print(f"{professor.nome} contratado para lecionar em Hogwarts!")
+    
+    def listar_alunos(self) -> None:
+        print(f"Alunos em {self.nome_escola}:")
+        for aluno in self.alunos:
+            print(f"- {aluno.nome}")
 
 class Bruxo:
 
@@ -38,7 +43,9 @@ class Chapeu:
 class Aluno(Bruxo):
 
     def __init__(self, nome: str) -> None:
-        pass
+        super().__init__(nome)
+        self.disciplinas = {}
+        self.notas = {}
 
 class Aluno(Bruxo):
     def __init__(self, nome: str) -> None:
