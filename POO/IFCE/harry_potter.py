@@ -47,6 +47,15 @@ class Aluno(Bruxo):
         self.disciplinas = {}
         self.notas = {}
 
+    def adicionar_disciplina(self, disciplina, professor) -> None:
+        self.disciplinas[disciplina] = professor
+        self.notas[disciplina] = []
+
+    def listar_disciplinas(self) -> None:
+        print(f"Disciplinas de {self.nome}:")
+        for disciplina, professor in self.disciplinas.items():
+            print(f"- {disciplina} com Professor {professor.nome}")
+
 class Aluno(Bruxo):
     def __init__(self, nome: str) -> None:
         super().__init__(nome)
